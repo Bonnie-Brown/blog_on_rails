@@ -1,0 +1,10 @@
+<h1> Post Show Page </h1>
+
+<h2> <%= @post.title %> </h2>
+<p> <%= @post.body %> </p>
+ <p><small> Created at <%= @post.created_at %></small></p>
+
+<%= link_to 'Edit', edit_post_path(@post) %>
+<%= button_to 'Delete', post_path(@post), method: :delete, form: {data: {turbo_confirm: "Are you sure you would like to proceed?"}} %>
+
+

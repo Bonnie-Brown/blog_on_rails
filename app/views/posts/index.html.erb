@@ -1,0 +1,11 @@
+<h1> Post Index Page </h1>
+
+<% @posts.each do |post| %>
+
+<div>
+
+<h2> <%= link_to post.title, post %></h2>
+
+</div>
+
+<% end %>

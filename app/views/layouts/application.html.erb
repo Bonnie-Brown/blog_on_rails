@@ -11,6 +11,11 @@
   </head>
 
   <body>
+  <nav>
+  <%= link_to "Home", root_path %>
+  <%= link_to "New Post", new_post_path %>
+  </nav>
+  <%= flash[:success] || flash[:error] %>
     <%= yield %>
   </body>
 </html>
