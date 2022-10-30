@@ -11,6 +11,8 @@ class PostsController < ApplicationController
     end
 
     def show
+        @comments = @post.comments.order(created_at: :desc)
+        @comment = Comment.new
     end
 
     def new
@@ -33,7 +35,7 @@ class PostsController < ApplicationController
 
     def update
         if @post.update(post_params)
-            flash[:success] = "Post successfully created."
+            flash[:success] = "Post successfully updated."
             redirect_to @post
         else
             flash[:error] = "Something went wrong"
@@ -42,7 +44,6 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        # @post = Post.find(params[:id])
         @post.destroy
         redirect_to root_path
     end
