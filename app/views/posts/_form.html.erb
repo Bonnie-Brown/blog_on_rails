@@ -1,4 +1,17 @@
 <%= form_with(model: @post) do |form| %>
+
+<% if @post.errors.any? %>
+<ul>
+ <% @post.errors.full_messages.each do |message| %>
+
+ <li> <%= message %> </li>
+
+ <% end %>
+
+</ul>
+
+ <% end %>
+
 <div>
 <%= form.label :title %>
 <br>
