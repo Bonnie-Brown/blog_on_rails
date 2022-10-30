@@ -25,8 +25,7 @@ class PostsController < ApplicationController
             flash[:success] = "Post successfully created."
             redirect_to @post
         else
-            flash[:error] = "Something went wrong"
-            render 'new'
+            render 'new', status: 303
         end
     end
 

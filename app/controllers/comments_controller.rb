@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
             redirect_to @post
         else
             @comments = @post.comments.order(created_at: :desc)
-            render "/posts/show"
+            render "/posts/show", status: 303 
         end
     end
 
