@@ -41,6 +41,7 @@
 <div>
  <%= comment.body %>
  <small> Commented <%= time_ago_in_words(comment.created_at) %> ago </small>
+ <%= link_to "Delete", post_comment_path(@post.id, comment.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
 
 <% end %>

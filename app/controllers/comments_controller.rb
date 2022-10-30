@@ -10,17 +10,17 @@ class CommentsController < ApplicationController
             flash[:success] = "Comment successfully created!"
             redirect_to @post
         else
-            flash[:error] = "Something went wrong"
-            @comments = @post.comment.order(created_at: :desc)
+            @comments = @post.comments.order(created_at: :desc)
             render "/posts/show"
         end
     end
 
     def destroy
-        @comment = comment.find params[:id]
+        @comment = Comment.find params[:id]
         @comment.destroy
+        redirect_to post_path(@comment.post)
         flash[:success] = "Comment has been deleted."
-        redirect_to @post 
+        
     end
 
     private
