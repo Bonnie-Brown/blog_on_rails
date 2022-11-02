@@ -18,6 +18,14 @@
      margin-left:auto
  }
 
+ .nav_blue_line {
+   color: rgb(0, 102, 204);
+ }
+
+ .nav-link.active.nav_blue_line{
+   color: rgb(0, 102, 204);
+ }
+
  .index{
     border: 2px solid lightgray;
  }
@@ -35,4 +43,6 @@
  h2 a:link {
    text-decoration: none;
  }
+
+
 

@@ -1,17 +1,21 @@
 
 <% @posts.each do |post| %>
 
-<div class = "index">
+<div>
 
-<div class = "text">
+    <div class = "index">
 
-<h2> <%= link_to post.title, post %></h2>
-<p> <%= post.body %></p>
+    <div class = "text">
+
+    <h2> <%= link_to post.title, post %></h2>
+    <p> <%= post.body %></p>
+
+    </div>
+
+    </div>
+
+    <br>
+
+    <% end %>
 
 </div>
-
-</div>
-
-<br>
-
-<% end %>
