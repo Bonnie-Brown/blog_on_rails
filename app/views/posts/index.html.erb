@@ -1,11 +1,15 @@
-<div class = "container">
-  <div class= "row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+  <div class= "row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-4">
     <% @posts.each do |post| %>
 
-        <div class = "col index text" >
+        <div class = "col index" >
+        
+        
 
           <h2> <%= link_to post.title, post %></h2>
           <p> <%= post.body %></p>
+
+        
 
         </div>
 
@@ -13,4 +17,4 @@
 
         <% end %>
     </div>
-</div>
+

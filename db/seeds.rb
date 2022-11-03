@@ -6,7 +6,7 @@ Comment.destroy_all
     created_at = Faker::Date.backward(days: 365 * 5)
 
     p = Post.create(
-    title: Faker::TvShows::Seinfeld.quote,
+    title: Faker::TvShows::Simpsons.quote,
     body: Faker::Lorem.paragraph_by_chars(number: 100, supplemental: false),
     updated_at: created_at
     )
