@@ -32,18 +32,27 @@
     border: 2px solid lightgray;
     
     padding-left: 2%;
-    padding-top: 2%; 
     padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 
     margin-bottom: 20px;
-    margin-right: 30px;  
+    margin-right: 20px; 
+    margin-left: 20px; 
     
     width: 30%;
+    
+
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
  }
 
 
+
  h2 {
-    font-size: 18px; 
+    font-size: 20px; 
  }
 
  h2 a:link {
@@ -55,6 +64,8 @@
    width: 90%;
   }
  }
+
+
 
 
 
