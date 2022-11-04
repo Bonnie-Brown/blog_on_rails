@@ -1,0 +1,20 @@
+
+  <div class= "row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <% @posts.each do |post| %>
+
+        <div class = "col index" >
+        
+        
+
+          <h2> <%= link_to post.title, post %></h2>
+          <p> <%= truncate post.body, length:50 %></p>
+
+        
+
+        </div>
+
+        <br>
+
+        <% end %>
+    </div>
+
