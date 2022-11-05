@@ -3,6 +3,7 @@
 <h1> <%= @post.title %> </h1>
 <p> <%= @post.body %> </p>
 <p><small> Created <%= time_ago_in_words(@post.created_at) %> ago </small></p>
+<p><small> Created by <%= @post.user.first_name %> </small></p>
 <div class="d-flex">
     <div class="m-1">
         <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-outline-primary" %>
@@ -50,7 +51,7 @@
 
 <div>
  <%= comment.body %> <br>
- <small> Commented <%= time_ago_in_words(comment.created_at) %> ago ⦁ </small>
+ <small> Commented <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.first_name %> ⦁ </small>
  <%=link_to "Delete", post_comment_path(@post.id, comment.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
 <br>
