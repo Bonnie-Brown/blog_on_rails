@@ -28,5 +28,8 @@ class Ability
       user == user
     end
 
+    can :update, User do |password|
+      user == user.password
+
   end
 end

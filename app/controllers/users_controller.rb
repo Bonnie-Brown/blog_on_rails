@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
+
 # Callbacks
 
 before_action :find_user, only: [:edit, :update]
+
 
 
 # Actions
@@ -36,13 +38,17 @@ before_action :find_user, only: [:edit, :update]
     end
 
     def update
-        if @user.update(user_params)
-            flash[:success] = "Profile successfully updated!"
-            redirect_to root_path 
-        else
-            flash[:error] = "Something went wrong."
-            render 'edit'
-        end
+        
+
+    if @user.update(user_params)
+        flash[:success] = "Profile successfully updated!"
+        redirect_to root_path 
+    else
+        flash[:error] = "Something went wrong."
+        render 'edit'
+    end
+       
+            
     end
 
 private
@@ -54,5 +60,6 @@ end
 def user_params
     params.require(:user).permit(:first_name, :last_name, :email)
 end
+
 
 end
