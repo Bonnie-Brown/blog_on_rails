@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
 
     before_action :find_post
+    before_action :authenticate_user!
 
 
     def create
         @comment = Comment.new(comment_params)
         @comment.post = @post 
+        @comment.user = current_user
         if @comment.save
             flash[:success] = "Comment successfully created!"
             redirect_to @post
@@ -17,9 +19,14 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment = Comment.find params[:id]
-        @comment.destroy
-        redirect_to post_path(@comment.post)
-        flash[:success] = "Comment has been deleted."
+
+        if can?(:crud, @comment)
+            @comment.destroy
+            redirect_to post_path(@comment.post)
+            flash[:success] = "Comment has been deleted."
+        else
+            redirect_to root_path, alert: "Not authorized to change comment."
+        end
         
     end
 

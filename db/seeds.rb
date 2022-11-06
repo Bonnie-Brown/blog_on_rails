@@ -6,13 +6,13 @@ PASSWORD = "123"
 
 users = User.all
 
-# super_user = User.create(
-#     first_name: "Admin",
-#     last_name: "User",
-#     email: "admin@user.com",
-#     password = PASSWORD
-    
-# )
+super_user = User.create(
+    first_name: "Admin",
+    last_name: "User",
+    email: "admin@user.com",
+    password: PASSWORD,
+    admin?: true  
+)
 
 
 10.times do
@@ -23,7 +23,8 @@ users = User.all
         first_name: first_name,
         last_name: last_name,
         email: "#{first_name}@#{last_name}.com",
-        password: PASSWORD
+        password: PASSWORD,
+        admin?: false
     )
 end
 

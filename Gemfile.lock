@@ -76,6 +76,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
     builder (3.2.4)
+    cancancan (3.4.0)
     concurrent-ruby (1.1.10)
     cowsay (0.3.0)
     crass (1.0.6)
@@ -200,6 +201,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   bootstrap-sass (~> 3.4, >= 3.4.1)
+  cancancan
   cowsay (~> 0.3.0)
   debug
   faker
