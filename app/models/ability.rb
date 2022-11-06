@@ -15,7 +15,6 @@ class Ability
 
     alias_action :create, :read, :update, :delete, :to => :crud
 
-
     can :crud, Post do |post|
       user == post.user
     end
@@ -30,6 +29,6 @@ class Ability
 
     can :update, User do |password|
       user == user.password
-
+    end
   end
 end
