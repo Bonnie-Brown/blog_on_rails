@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
-  resources :users, only: [:new, :create]
+  resources :users
 
   resource :session, only: [:new, :create, :destroy]
 

@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+# Callbacks
+
+before_action :find_user, only: [:edit, :update]
+
+
+# Actions
+
+# New
 
     def new
         @user = User.new
@@ -20,6 +28,31 @@ class UsersController < ApplicationController
         else
             render :new, status: 303
         end
-
     end
+
+# Update
+
+    def edit
+    end
+
+    def update
+        if @user.update(user_params)
+            flash[:success] = "Profile successfully updated!"
+            redirect_to root_path 
+        else
+            flash[:error] = "Something went wrong."
+            render 'edit'
+        end
+    end
+
+private
+
+def find_user
+    @user = User.find(params[:id])
+end
+
+def user_params
+    params.require(:user).permit(:first_name, :last_name, :email)
+end
+
 end

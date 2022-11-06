@@ -24,9 +24,9 @@ class Ability
       user == comment.user
     end
 
-    # can :update, User do |user|
-    #   user == user
-    # end
+    can :update, User do |user|
+      user == user
+    end
 
   end
 end
