@@ -8,6 +8,7 @@ before_action :find_user, only: [:edit, :update]
 
 # Actions
 
+
 # New
 
     def new
@@ -41,11 +42,11 @@ before_action :find_user, only: [:edit, :update]
         
 
     if @user.update(user_params)
-        flash[:success] = "Profile successfully updated!"
+        flash[:success] = "Profile successfully updated."
         redirect_to root_path 
     else
+        redirect_to users_path
         flash[:error] = "Something went wrong."
-        render 'edit'
     end
        
             

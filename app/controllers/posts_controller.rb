@@ -48,7 +48,7 @@ class PostsController < ApplicationController
             flash[:success] = "Post successfully updated."
             redirect_to @post
         else
-            flash[:error] = "Something went wrong"
+            flash[:error] = "Something went wrong."
             render 'edit' 
         end
     end
@@ -57,6 +57,7 @@ class PostsController < ApplicationController
 
     def destroy
         @post.destroy
+        flash[:success] = "Post successfully deleted."
         redirect_to root_path
     end
 
@@ -72,7 +73,7 @@ class PostsController < ApplicationController
     end
 
     def authorize_user!
-        redirect_to root_path, alert: "Not authorized!" unless can?(:crud, @post)
+        redirect_to root_path, alert: "Not authorized to change post." unless can?(:crud, @post)
     end
 
 end

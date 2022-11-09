@@ -20,12 +20,13 @@ class PasswordsController < ApplicationController
             if @user.authenticate(update_input[:current_password])
                 if update_input[:current_password] != update_input[:new_password]
                     @user.update(password: update_input[:new_password])
-                    redirect_to root_path, notice: "Password Updated."
+                    redirect_to root_path
+                    flash[:success] = "Password successfully updated."
                 else
-                    redirect_to password_path, notice: " Passwords can't match"
+                    redirect_to password_path, alert: "New password cannot match the current one. Please try again."
                 end
             else
-                redirect_to password_path, notice: 'You are not authorized'
+                redirect_to password_path, alert: 'Incorrect password.'
             end
     end
 
